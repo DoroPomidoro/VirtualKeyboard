@@ -1,0 +1,122 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1 {
+  width: 350px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+textarea {
+  width: 835px;
+  height: 200px;
+  display: block;
+  margin: 10px auto 40px;
+  padding: 20px;
+  resize: none;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+#keyboard {
+  display: block;
+  border: 2px solid black;
+  padding: 5px;
+  width: 865px;
+  margin: 0 auto;
+}
+
+#keyboard:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.k-key {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(87, 94, 102);
+  margin: 3px;
+  padding: 4px;
+  float: left;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 38px;
+  color: slategray;
+}
+
+.k-key:hover {
+  color: white;
+  background: slategray;
+  cursor: pointer;
+}
+
+.active {
+  color: white;
+  background: slategray;
+}
+
+.clearfix {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.active {
+  background: grey;
+}
+
+.Backspace {
+  width: 120px;
+}
+
+.Tab {
+  width: 65px;
+}
+
+.CapsLock {
+  width: 80px;
+}
+
+.ShiftLeft {
+  width: 110px;
+}
+
+.ShiftRight {
+  width: 107px;
+}
+
+.Enter {
+  width: 137px;
+}
+
+.ControlLeft {
+  width: 60px;
+}
+
+.ControlRight {
+  width: 51px;
+}
+
+.AltLeft, .AltRight {
+  width: 65px;
+}
+
+.Space {
+  width: 320px;
+}
+
+.MetaLeft {
+  background-image: url("https://img.icons8.com/material-sharp/452/windows8.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=style-keyboard.css.map */
