@@ -37,3 +37,37 @@ function init() {
   document.querySelector("#keyboard").innerHTML = out;
 }
 init();
+
+document.onkeyup = (event) => {
+  document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.remove("active");
+}
+  
+// document.onkeydown = (event) => {
+//   if (event.code === "Delete" || event.code === "Backspace") {
+//     return true;
+//   }
+//   return false;
+// }
+
+document.onkeydown = (event) => {
+  document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.add("active");
+  const keyLetter = document.querySelector(`#keyboard .k-key[data="${event.code}"]`).innerHTML;
+  if (event.code === "Tab") {
+    event.preventDefault();
+  }
+  console.log(event.code === "Tab");
+  if (event.code !== "Tab" || event.code !== "Delete" || event.code !== "Backspace" || event.code !== "AltLeft") textarea.setRangeText(keyLetter, textarea.selectionStart, textarea.selectionEnd, "end");
+}
+
+document.querySelectorAll("#keyboard .k-key").forEach((element) => {
+  element.addEventListener("click", () => {
+    document.querySelectorAll("#keyboard .k-key").forEach((el) => {
+      el.classList.remove("active");
+    });
+    console.log(element);
+    element.getAttribute("data");
+    element.classList.add("active");
+    const codeKey = element.innerHTML;
+    if (element.getAttribute("data").includes("Key") || element.getAttribute("data").includes("Dig") || element.getAttribute("data").includes("Backq") || element.getAttribute("data").includes("Minu") || element.getAttribute("data").includes("Equa") || element.getAttribute("data").includes("Brack") || element.getAttribute("data").includes("Backsl") || element.getAttribute("data").includes("Semi") || element.getAttribute("data").includes("Quo") || element.getAttribute("data").includes("Comm") || element.getAttribute("data").includes("Perio") || element.getAttribute("data").includes("Slash") || element.getAttribute("data").includes("Spac")) textarea.setRangeText(codeKey, textarea.selectionStart, textarea.selectionEnd, "end");
+  });
+});
