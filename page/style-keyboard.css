@@ -7,7 +7,7 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
-h1 {
+h1, h3 {
   width: 350px;
   margin: 0 auto;
   padding: 30px;
@@ -50,6 +50,7 @@ textarea {
   text-align: center;
   line-height: 38px;
   color: slategray;
+  position: relative;
 }
 
 .k-key:hover {
@@ -69,10 +70,6 @@ textarea {
   clear: both;
 }
 
-.active {
-  background: grey;
-}
-
 .Backspace {
   width: 120px;
 }
@@ -83,6 +80,21 @@ textarea {
 
 .CapsLock {
   width: 80px;
+}
+
+.CapsLock::after {
+  content: "";
+  top: 4px;
+  right: 4px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.active.CapsLock::after {
+  background: #08ff01;
 }
 
 .ShiftLeft {
