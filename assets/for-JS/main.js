@@ -8,6 +8,7 @@ const shiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_"
 const capsShiftEng = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", "<", ">", "?", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
 const capsShiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ",", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
 
+let counter = 0;
 let flag = false;
 let langToggle = "eng";
 const arr = [];
@@ -37,8 +38,7 @@ function backspace() {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   const ln = textarea.value.length;
-  // eslint-disable-next-line no-empty
-  if (ss === 0) {} else if (ss === se) {
+  if (ss === 0) { counter += counter + 1 } else if (ss === se) {
     textarea.value = textarea.value.substring(0, ss - 1) + textarea.value.substring(se, ln);
     textarea.focus();
     textarea.selectionStart = ss - 1;
@@ -75,8 +75,7 @@ function enterBtn() {
 function arrowLeft() {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
-  // eslint-disable-next-line no-empty
-  if (ss === 0) {} else if (ss === se) {
+  if (ss === 0) { counter += counter + 1 } else if (ss === se) {
     textarea.setRangeText("", textarea.selectionStart, textarea.selectionEnd, "end");
     textarea.focus();
     textarea.selectionStart = ss - 1;
@@ -150,7 +149,74 @@ const init = () => {
       if (element.getAttribute("data").includes("Key") || element.getAttribute("data").includes("Dig") || element.getAttribute("data").includes("Backq") || element.getAttribute("data").includes("Minu") || element.getAttribute("data").includes("Equa") || element.getAttribute("data").includes("Brack") || element.getAttribute("data").includes("Backsl") || element.getAttribute("data").includes("Semi") || element.getAttribute("data").includes("Quo") || element.getAttribute("data").includes("Comm") || element.getAttribute("data").includes("Perio") || element.getAttribute("data").includes("Slash") || element.getAttribute("data").includes("Spac")) textarea.setRangeText(codeKey, textarea.selectionStart, textarea.selectionEnd, "end");
     });
   });
-}
+  document.querySelectorAll("#keyboard .k-key").forEach((element) => {
+    element.addEventListener("mousedown", () => {
+      if (element.innerHTML === "Shift") {
+        if (arr[15] === "q") {
+          arr.splice(0);
+          arr.push(...shiftEng);
+          init();
+        } else if (arr[15] === "й") {
+          arr.splice(0);
+          arr.push(...shiftRus);
+          init();
+        } else if (arr[15] === "Q") {
+          arr.splice(0);
+          arr.push(...capsShiftEng);
+          init();
+        } else if (arr[15] === "Й") {
+          arr.splice(0);
+          arr.push(...capsShiftRus);
+          init();
+        }
+      }
+    })
+    element.addEventListener("mouseup", () => {
+      if (element.innerHTML === "Shift") {
+        if (arr[15] === "Q") {
+          arr.splice(0);
+          arr.push(...lowerEng);
+          init();
+        } else if (arr[15] === "Й") {
+          arr.splice(0);
+          arr.push(...lowerRus);
+          init();
+        } else if (arr[15] === "q") {
+          arr.splice(0);
+          arr.push(...upperEng);
+          init();
+        } else if (arr[15] === "й") {
+          arr.splice(0);
+          arr.push(...upperRus);
+          init();
+        }
+      }
+      if (element.innerHTML === "CapsLock") {
+        if (arr[15] === "Q") {
+          arr.splice(0);
+          arr.push(...lowerEng);
+          init();
+          document.querySelector(".CapsLock").classList.remove("activeCaps");
+        } else if (arr[15] === "Й") {
+          arr.splice(0);
+          arr.push(...lowerRus);
+          init();
+          document.querySelector(".CapsLock").classList.remove("activeCaps");
+        } else if (arr[15] === "q") {
+          arr.splice(0);
+          arr.push(...upperEng);
+          init();
+          document.querySelector(".CapsLock").classList.add("activeCaps");
+        } else if (arr[15] === "й") {
+          arr.splice(0);
+          arr.push(...upperRus);
+          init();
+          document.querySelector(".CapsLock").classList.add("activeCaps");
+        }
+      }
+    })
+  });
+};
 init();
 
 const constructorLangArr = () => {
@@ -203,6 +269,7 @@ document.onkeydown = (event) => {
       localStorage.setItem("lang", langToggle);
       constructorLangArr();
     }
+    document.querySelector(`.${event.code}`).classList.add("active");
   }
 
   if (event.code === "CapsLock") {
@@ -225,11 +292,9 @@ document.onkeydown = (event) => {
       constructorLangArr();
     }
   }
-
   if (event.code === "Backspace") {
     backspace();
   }
-
   if (event.code === "Del") {
     deleter();
   }
@@ -250,8 +315,8 @@ document.onkeydown = (event) => {
     arrowRight();
   }
 
-  // eslint-disable-next-line no-empty
   if (event.code === "Tab" || event.code === "Delete" || event.code === "Backspace" || event.code === "AltLeft" || event.code === "CapsLock" || event.code === "ShiftLeft" || event.code === "ControlLeft" || event.code === "ControlRight" || event.code === "Enter" || event.code === "AltRight" || event.code === "ArrowRight" || event.code === "ArrowUp" || event.code === "ArrowDown" || event.code === "ArrowLeft" || event.code === "ShiftRight") {
+    counter += counter + 1
   } else textarea.setRangeText(keyLetter, textarea.selectionStart, textarea.selectionEnd, "end");
 
   if (event.code === "ShiftRight" || event.code === "ShiftLeft") {
@@ -272,19 +337,22 @@ document.onkeydown = (event) => {
       arr.push(...capsShiftRus);
       init();
     }
+    document.querySelector(`.${event.code}`).classList.add("active");
   }
 }
 
 document.onkeyup = (event) => {
-  // eslint-disable-next-line no-empty
-  if (event.code === "CapsLock") {} else {
+  if (event.code === "CapsLock") {
+    if (arr[15] === "Q" || arr[15] === "Й") {
+      document.querySelector(".CapsLock").classList.add("activeCaps");
+    }
+  } else {
     document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.remove("active");
   }
   if (event.code === "ControlLeft") {
     flag = false;
   }
   if (event.code === "ShiftRight" || event.code === "ShiftLeft") {
-    // event.classList.add("active");
     if (arr[15] === "Q") {
       arr.splice(0);
       arr.push(...lowerEng);

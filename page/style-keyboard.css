@@ -93,7 +93,12 @@ textarea {
   border-radius: 50%;
 }
 
-.active.CapsLock::after {
+.activeCaps {
+  color: white;
+  background-color: slategray;
+}
+
+.activeCaps.CapsLock::after {
   background: #08ff01;
 }
 
