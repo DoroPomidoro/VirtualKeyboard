@@ -4,10 +4,10 @@ const lowerEng = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=
 const upperEng = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
 const lowerRus = ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ".", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
 const upperRus = ["Ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", "\\", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", ".", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
-// const shiftEng = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "{", "|", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
-// const shiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", "/", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", ",", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
-// const capsShiftEng = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", "<", ">", "?", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
-// const capsShiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ",", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
+const shiftEng = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "{", "|", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "Enter", "Shift", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
+const shiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", "/", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", ",", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
+const capsShiftEng = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "z", "x", "c", "v", "b", "n", "m", "<", ">", "?", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
+const capsShiftRus = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ",", "&#129045", "Shift", "Ctrl", "", "Alt", " ", "Alt", "&#129044", "&#129047", "&#129046", "Ctrl"];
 
 let flag = false;
 let langToggle = "eng";
@@ -146,15 +146,22 @@ const init = () => {
   }
   document.querySelector("#keyboard").innerHTML = out;
 
-  document.querySelector(".CapsLock").classList.toggle("active");
-
   document.querySelectorAll("#keyboard .k-key").forEach((element) => {
     element.addEventListener("click", () => {
       document.querySelectorAll("#keyboard .k-key").forEach((el) => {
+      //   if (element.classList.value.substring(0, 10) === "k-key CapsLock active") {
+      //     el.classList.remove("active");
+      //   }
         el.classList.remove("active");
       });
       element.getAttribute("data");
-      element.classList.add("active");
+      //   element.classList.add("active");
+      //   console.log(element.classList.value.substring(0, 14) === "k-key CapsLock")
+      if ((element.classList.value.substring(0, 14) === "k-key CapsLock")) {
+        element.classList.toggle("active");
+      } else {
+        element.classList.add("active");
+      }
       const codeKey = element.innerHTML;
       //   if (codeKey === "CapsLock") {
       //     document.querySelector(".CapsLock").classList.toggle("active");
@@ -245,6 +252,7 @@ document.onkeydown = (event) => {
   }
 
   if (event.code === "CapsLock") {
+    document.querySelector(".CapsLock").classList.toggle("active");
     if (arr[15] === "q") {
       langToggle = "ENG";
       localStorage.setItem("lang", langToggle);
@@ -292,13 +300,58 @@ document.onkeydown = (event) => {
   // eslint-disable-next-line no-empty
   if (event.code === "Tab" || event.code === "Delete" || event.code === "Backspace" || event.code === "AltLeft" || event.code === "CapsLock" || event.code === "ShiftLeft" || event.code === "ControlLeft" || event.code === "ControlRight" || event.code === "Enter" || event.code === "AltRight" || event.code === "ArrowRight" || event.code === "ArrowUp" || event.code === "ArrowDown" || event.code === "ArrowLeft" || event.code === "ShiftRight") {
   } else textarea.setRangeText(keyLetter, textarea.selectionStart, textarea.selectionEnd, "end");
+
+  if (event.code === "ShiftRight" || event.code === "ShiftLeft") {
+    if (arr[15] === "q") {
+      arr.splice(0);
+      arr.push(...shiftEng);
+      init();
+    } else if (arr[15] === "й") {
+      arr.splice(0);
+      arr.push(...shiftRus);
+      init();
+    } else if (arr[15] === "Q") {
+      arr.splice(0);
+      arr.push(...capsShiftEng);
+      init();
+    } else if (arr[15] === "Й") {
+      arr.splice(0);
+      arr.push(...capsShiftRus);
+      init();
+    }
+  }
 }
 
 document.onkeyup = (event) => {
-  document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.remove("active");
+  // eslint-disable-next-line no-empty
+  if (event.code === "CapsLock") {} else {
+    document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.remove("active");
+  }
   if (event.code === "ControlLeft") {
     flag = false;
   }
+  //   document.querySelector(`#keyboard .k-key[data="${event.code}"]`).classList.remove("active");
+  if (event.code === "ShiftRight" || event.code === "ShiftLeft") {
+    // event.classList.add("active");
+    if (arr[15] === "Q") {
+      arr.splice(0);
+      arr.push(...lowerEng);
+      init();
+    } else if (arr[15] === "Й") {
+      arr.splice(0);
+      arr.push(...lowerRus);
+      init();
+    } else if (arr[15] === "q") {
+      arr.splice(0);
+      arr.push(...upperEng);
+      init();
+    } else if (arr[15] === "й") {
+      arr.splice(0);
+      arr.push(...upperRus);
+      init();
+    }
+  }
+
 //   if (event.code === "CapsLock") {
 //     document.querySelector(".CapsLock").classList.toggle("active");
 //   }
