@@ -1,28 +1,47 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  background: #f1f8e4;
 }
 
 body {
   font-family: "Ubuntu", sans-serif;
+  background: #f1f8e4;
 }
 
 h1, h3 {
-  width: 350px;
+  width: 600px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px 30px;
   text-align: center;
+  font-family: "Bebas Neue", cursive;
+}
+
+p {
+  width: 550px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
 }
 
 textarea {
   width: 835px;
-  height: 200px;
+  height: 150px;
   display: block;
-  margin: 10px auto 40px;
+  margin: 10px auto 30px;
   padding: 20px;
   resize: none;
-  border: 2px solid black;
+  background: #cee1b8;
+  color: #37514a;
+  border: 2px solid #79bb82;
   border-radius: 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+}
+
+textarea:active {
+  border-color: #08ff01;
 }
 
 #keyboard {
@@ -31,6 +50,8 @@ textarea {
   padding: 5px;
   width: 865px;
   margin: 0 auto;
+  border-radius: 10px;
+  background: #112a26;
 }
 
 #keyboard:after {
@@ -49,19 +70,20 @@ textarea {
   border-radius: 4px;
   text-align: center;
   line-height: 38px;
-  color: slategray;
+  color: #678d65;
   position: relative;
 }
 
 .k-key:hover {
-  color: white;
-  background: slategray;
+  color: #32e14a;
+  background: #37514a;
   cursor: pointer;
 }
 
 .active {
-  color: white;
-  background: slategray;
+  color: #32e14a;
+  background: #37514a;
+  transform: scale(0.9);
 }
 
 .clearfix {
@@ -94,8 +116,9 @@ textarea {
 }
 
 .activeCaps {
-  color: white;
-  background-color: slategray;
+  color: #32e14a;
+  background: #37514a;
+  transform: scale(0.9);
 }
 
 .activeCaps.CapsLock::after {
@@ -131,9 +154,13 @@ textarea {
 }
 
 .MetaLeft {
-  background-image: url("https://img.icons8.com/material-sharp/452/windows8.png");
+  background-image: url("https://i.ibb.co/wKfk2hY/microsoft-windows-22-2.png");
   background-size: 95%;
   background-repeat: no-repeat;
+}
+
+.k-key.MetaLeft:hover {
+  background: initial;
 }
 
 /*# sourceMappingURL=style-keyboard.css.map */

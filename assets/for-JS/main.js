@@ -18,6 +18,7 @@ const keyboard = document.createElement("div");
 const title = document.createElement("h1");
 const textarea = document.createElement("textarea");
 const subtitle = document.createElement("h3");
+const paragraph = document.createElement("p");
 container.className = "container";
 textarea.name = "textarea-for-keyboard";
 textarea.placeholder = "Let's input here some letters";
@@ -30,9 +31,11 @@ document.querySelector(".container").append(title);
 document.querySelector(".container").append(textarea);
 document.querySelector(".container").append(keyboard);
 document.querySelector(".container").append(subtitle);
+document.querySelector(".container").append(paragraph);
 
 title.innerText = "Virtual Keyboard by Uladzislau Kolbik";
 subtitle.innerText = "Press Ctrl+Shift to change language";
+paragraph.innerText = "Keyboard has been created on windows operation system";
 
 function backspace() {
   const ss = textarea.selectionStart;
@@ -105,7 +108,6 @@ function tabulation() {
     textarea.selectionEnd = ss + 4;
   }
 }
-
 const init = () => {
   let out = "";
   for (let i = 0; i < arr.length; i += 1) {
