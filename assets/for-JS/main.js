@@ -34,7 +34,7 @@ document.querySelector(".container").append(subtitle);
 document.querySelector(".container").append(paragraph);
 
 title.innerText = "Virtual Keyboard by Uladzislau Kolbik";
-subtitle.innerText = "Press Ctrl+Shift to change language";
+subtitle.innerText = "Press CtrlLeft+AltLeft to change language";
 paragraph.innerText = "Keyboard has been created on windows operation system";
 
 function backspace() {
