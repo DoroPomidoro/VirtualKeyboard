@@ -37,7 +37,7 @@ title.innerText = "Virtual Keyboard by Uladzislau Kolbik";
 subtitle.innerText = "Press CtrlLeft+AltLeft to change language";
 paragraph.innerText = "Keyboard has been created on windows operation system";
 
-function backspace() {
+const backspace = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   const ln = textarea.value.length;
@@ -49,7 +49,7 @@ function backspace() {
   }
 }
 
-function deleter() {
+const deleter = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   const ln = textarea.value.length;
@@ -62,7 +62,7 @@ function deleter() {
   }
 }
 
-function enterBtn() {
+const enterBtn = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   const ln = textarea.value.length;
@@ -75,7 +75,7 @@ function enterBtn() {
   }
 }
 
-function arrowLeft() {
+const arrowLeft = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   if (ss === 0) { counter += counter + 1 } else if (ss === se) {
@@ -86,7 +86,7 @@ function arrowLeft() {
   }
 }
 
-function arrowRight() {
+const arrowRight = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
   if (ss === se) {
@@ -97,7 +97,7 @@ function arrowRight() {
   }
 }
 
-function tabulation() {
+const tabulation = () => {
   const ss = textarea.selectionStart;
   const se = textarea.selectionEnd;
 
